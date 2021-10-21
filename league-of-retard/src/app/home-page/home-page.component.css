@@ -1,0 +1,63 @@
+.title {
+  color: white;
+  padding-top: 30px;
+}
+
+#contentdiv {
+  padding-top: 45px;
+}
+
+.title-text {
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.img {
+  padding-top: 30px;
+}
+
+.image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.content {
+  height: 100vh;
+  background: linear-gradient(326deg, #274389 28.65%, #3B8EB1 50%);
+  padding-top: 100px;
+}
+
+.btnContainer {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.topBtn {
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+
+.button {
+  background: #274389;
+  border: 4px solid #C8B23E;
+  box-sizing: border-box;
+  border-radius: 50px;
+  width: 281px;
+  height: 70px;
+  padding-top: 7px;
+}
+
+.thetext {
+  font-style: normal;
+  font-weight: 300;
+  font-size: 30px;
+  text-transform: uppercase;
+  color: white;
+}
+
+.lien {
+  text-decoration: none;
+}
