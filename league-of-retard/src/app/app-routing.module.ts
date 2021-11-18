@@ -6,6 +6,7 @@ import {HomePageComponent} from "./pages/home-page/home-page.component";
 import {UserProfilComponent} from "./pages/user-profil/user-profil.component";
 import {RechercheComponent} from "./pages/recherche/recherche.component";
 import { AuthGuard } from './auth.guard';
+import {NotFound404Component} from "./pages/not-found404/not-found404.component";
 
 const routes: Routes = [
 
@@ -14,7 +15,9 @@ const routes: Routes = [
   {path: 'inscription', component: InscriptionComponent},
   {path: 'profil', component: UserProfilComponent, canActivate:[AuthGuard]},
   {path: 'recherche', component: RechercheComponent, canActivate:[AuthGuard]},
-
+  {path: '404NotFound', component: NotFound404Component},
+  {path: '', redirectTo: 'profil', pathMatch: 'full'},
+  {path: '**', redirectTo: '404NotFound'}
 ];
 
 @NgModule({

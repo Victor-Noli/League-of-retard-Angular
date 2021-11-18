@@ -19,6 +19,7 @@ import { MatListModule } from '@angular/material/list';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NotFound404Component } from './pages/not-found404/not-found404.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ConnexionComponent,
     InscriptionComponent,
     RechercheComponent,
-    MainNavComponent
+    MainNavComponent,
+    NotFound404Component
   ],
   imports: [
     BrowserModule,
