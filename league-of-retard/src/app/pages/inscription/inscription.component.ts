@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InscriptionComponent implements OnInit {
 
+  form: any = {};
+  isSuccessful = false;
+  isSignUpFailed = false;
+  errorMessage = '';
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onSubmit(): void {
+    
+  
+  }
 }

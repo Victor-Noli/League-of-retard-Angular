@@ -10,31 +10,33 @@
     <div>
       <h1><a href="#" routerLink="">Retour</a></h1>
     </div>
-    <img class="image" id="lulufreelp" src="../../../assets/img/lulu.png" alt="logo">
-    <div class="col-12">
     <div class="img">
       <img class="image" src="assets/img/League_of_Retard.png" alt="logo">
     </div>
     <div class="title">
       <h1 class="title-text">Connexion</h1>
     </div>
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
     <div data-role="content" id="contentdiv">
       <div class="btnContainer topBtn">
         <span>Pseudo</span>
-        <input type="text" class="textconnectl">
+        <input type="text" class="textconnectl" formControlName="pseudo">
       </div>
       <div class="btnContainer topBtn">
         <span>Mot de passe</span>
-        <input type="text" class="textconnectl">
+        <input type="password" class="textconnectl" formControlName="password">
       </div>
       <div class="btnContainer btmBtn">
-        <button class="button">
+     <!--   <button class="button">
           <a class="align-items-center lien" href="#"><p class="thetext">Connexion</p></a>
         </button>
+      -->
+      <input type="submit" value="Connexion" >
       </div>
+
     </div>
-    </div>
-  </div>
+    </form>
+</div>
 </div>
 </body>
 <footer>
