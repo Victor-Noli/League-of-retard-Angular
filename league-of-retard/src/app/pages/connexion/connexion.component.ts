@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { User } from 'src/app/user';
+import { AuthService } from 'src/app/auth.service';
 
-
-import { AuthService } from '../../auth.service';
-import { TokenStorageService } from '../../token-storage.service';
 
 @Component({
   selector: 'app-connexion',
@@ -13,40 +12,29 @@ import { TokenStorageService } from '../../token-storage.service';
 })
 export class ConnexionComponent implements OnInit {
   
-  form: any = {};
-  isLoggedIn = false;
-  isLoginFailed = false;
-  errorMessage = '';
-  roles: string[] = [];
 
-  constructor(private authService: AuthService, private tokenStorage: TokenStorageService) { }
+  loginForm: FormGroup;
+  isSubmitted = false;
+
+
+  constructor(private authService: AuthService, private router: Router, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
-    if (this.tokenStorage.getToken()) {
-      this.isLoggedIn = true;
-      this.roles = this.tokenStorage.getUser().roles;
+    this.loginForm = this.formBuilder.group({
+      pseudo: ['', Validators.required],
+      password: ['', Validators.required]
+    });
+  }
+  get formControls(){return this.loginForm.controls}
+  login(){
+    console.log(this.loginForm.value);
+    if(this.loginForm.invalid){
+      return;
     }
+    this.authService.login(this.loginForm.value);
+    this.router.navigateByUrl('/profile');
   }
 
   onSubmit(): void {
-    this.authService.login(this.form).subscribe(
-      data => {
-        this.tokenStorage.saveToken(data.accessToken);
-        this.tokenStorage.saveUser(data);
-
-        this.isLoginFailed = false;
-        this.isLoggedIn = true;
-        this.roles = this.tokenStorage.getUser().roles;
-        this.reloadPage();
-      },
-      err => {
-        this.errorMessage = err.error.message;
-        this.isLoginFailed = true;
-      }
-    );
-  }
-
-  reloadPage(): void {
-    window.location.reload();
   }
 }

@@ -1,32 +1,20 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import {User} from './user';
 
-const AUTH_API = 'http://localhost:8000/api/auth/';
-
-const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-};
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(private http: HttpClient) { }
-
-  login(credentials): Observable<any> {
-    return this.http.post(AUTH_API + 'signin', {
-      username: credentials.username,
-      password: credentials.password
-    }, httpOptions);
+  constructor() { }
+  public login(userData: User){
+    localStorage.setItem('ACCESS_TOKEN',"access_token");
   }
-
-  register(user): Observable<any> {
-    return this.http.post(AUTH_API + 'signup', {
-      username: user.username,
-      email: user.email,
-      password: user.password
-    }, httpOptions);
+  public isLogged(){
+    return localStorage.getItem('ACCESS_TOKEN')!==null;
+  }
+  public disconnect(){
+    localStorage.removeItem('ACCESS_TOKEN');
   }
 }

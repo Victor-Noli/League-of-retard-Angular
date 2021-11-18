@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../auth.service';
+
 @Component({
   selector: 'app-inscription',
   templateUrl: './inscription.component.html',
@@ -12,22 +12,13 @@ export class InscriptionComponent implements OnInit {
   isSignUpFailed = false;
   errorMessage = '';
 
-  constructor(private authService: AuthService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
 
   onSubmit(): void {
-    this.authService.register(this.form).subscribe(
-      data => {
-        console.log(data);
-        this.isSuccessful = true;
-        this.isSignUpFailed = false;
-      },
-      err => {
-        this.errorMessage = err.error.message;
-        this.isSignUpFailed = true;
-      }
-    );
+    
+  
   }
 }
