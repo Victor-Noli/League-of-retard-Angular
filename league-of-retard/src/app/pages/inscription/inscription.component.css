@@ -1,3 +1,10 @@
+body {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(326deg, #274389 28.65%, #3B8EB1 50%);
+  max-height: 765px;
+}
+
 .title {
   color: white;
   padding-top: 30px;
@@ -10,10 +17,11 @@
 .title-text {
   text-align: center;
   padding-top: 30px;
+  padding-bottom: 20px;
 }
 
 .img {
-  padding-top: 30px;
+  padding-top: 100px;
 }
 
 .image {
@@ -23,13 +31,8 @@
   width: 50%;
 }
 
-.content {
-  height: 100vh;
-  background: linear-gradient(326deg, #274389 28.65%, #3B8EB1 50%);
-}
-
 .btnContainer {
- margin-top: 15px;
+  margin: 0 auto;
   text-align: center;
 }
 
@@ -42,7 +45,7 @@
   border: 2px solid #C8B23E;
   box-sizing: border-box;
   border-radius: 50px;
-  width: 100px;
+  width: 150px;
   height: 40px;
   padding-top: 7px;
   margin-top: 10px;
@@ -59,6 +62,13 @@
   text-decoration: none;
 }
 
+h1 {
+  font-size: 15px;
+  padding-top: 20px;
+  padding-left: 20px;
+  color: #ffffff;
+}
+
 h1 a {
   font-size: 15px;
   padding-top: 20px;
@@ -73,15 +83,31 @@ h1 a:hover{
   color: #274389;
 }
 
-h2 {
+span {
+  font-size: 15px;
+  padding-top: 20px;
   color: #ffffff;
-  font-size: 20px;
 }
 
 .textconnectl {
   background: #274389;
   border: 2px solid #C8B23E;
   border-radius: 50px;
-  width: 160px;
+  width: 100%;
   height: 30px;
+}
+
+footer {
+  background-color: #274389;
+  color: white;
+  padding-bottom: 8px;
+  padding-top: 10px;
+  box-shadow: 0 0 20px 0 black;
+}
+
+#lulufreelp {
+  margin-top: -150px;
+  margin-right: 10px;
+  transform: rotatex(180deg);
+
 }

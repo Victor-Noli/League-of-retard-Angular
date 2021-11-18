@@ -2,7 +2,7 @@ body {
   height: 100%;
   width: 100%;
   background: linear-gradient(326deg, #274389 28.65%, #3B8EB1 50%);
-  max-height: 765px;
+  max-height: 700px;
 }
 
 .title {
@@ -21,14 +21,14 @@ body {
 }
 
 .img {
-  padding-top: 100px;
+  padding-top: 30px;
 }
 
 .image {
   display: block;
-  margin-left: auto;
+  margin-left: 15%;
   margin-right: auto;
-  width: 50%;
+  width: 15%;
 }
 
 .btnContainer {
@@ -104,10 +104,4 @@ footer {
   padding-bottom: 8px;
   padding-top: 10px;
   box-shadow: 0 0 20px 0 black;
-}
-
-#gnarlebigboy {
-  margin-top: 140px;
-  margin-right: -30px;
-
 }
