@@ -7,6 +7,7 @@ import {UserProfilComponent} from "./pages/user-profil/user-profil.component";
 import {RechercheComponent} from "./pages/recherche/recherche.component";
 import { AuthGuard } from './auth.guard';
 import {NotFound404Component} from "./pages/not-found404/not-found404.component";
+import {HistoryComponent} from "./pages/history/history.component";
 
 const routes: Routes = [
 
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: 'connexion', component: ConnexionComponent},
   {path: 'inscription', component: InscriptionComponent},
   {path: 'profil', component: UserProfilComponent, canActivate:[AuthGuard]},
+  {path: 'history', component: HistoryComponent, canActivate:[AuthGuard]},
   {path: 'recherche', component: RechercheComponent, canActivate:[AuthGuard]},
   {path: '404NotFound', component: NotFound404Component},
   {path: '', redirectTo: 'profil', pathMatch: 'full'},

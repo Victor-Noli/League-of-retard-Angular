@@ -20,6 +20,7 @@ import { MatListModule } from '@angular/material/list';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NotFound404Component } from './pages/not-found404/not-found404.component';
+import { HistoryComponent } from './pages/history/history.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { NotFound404Component } from './pages/not-found404/not-found404.componen
     InscriptionComponent,
     RechercheComponent,
     MainNavComponent,
-    NotFound404Component
+    NotFound404Component,
+    HistoryComponent
   ],
   imports: [
     BrowserModule,
